@@ -1,54 +1,76 @@
 @use 'variaveis';
 @use 'hero';
+@use 'shows';
+@use 'plans';
 
-@mixin text($fontSize: 16px){
+@mixin text($fontSize: 16px) {
     font-size: $fontSize;
     line-height: $fontSize + 10px;
     color: variaveis.$corTextoPrincipal;
 }
 
-.text{
+.text {
     @include text;
 }
 
-.text--big{
+.text--big {
     @include text(18px);
 }
 
-.text--small{
+.text--small {
     @include text(12px);
 }
 
-@mixin title($fontSize: 40px){
+@mixin title($fontSize: 40px) {
     @include text($fontSize);
     color: variaveis.$corTextoSecundario;
 }
 
-.title{
+.title {
     @include title;
 }
 
-.title--big{
+.title--big {
     @include title(44px);
 }
 
-.title--small{
+.title--small {
     @include title(28px);
 }
 
-.link-text{
+.link-text {
     @include text(18px);
     color: variaveis.$corTextoSecundario;
     text-decoration: underline;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
 }
 
-body{
+body {
     background-color: variaveis.$corDeFundo;
+}
+
+.button {
+    display: block;
+    width: 100%;
+    height: 60px;
+    font-size: 18px;
+    color: variaveis.$corTextoSecundario;
+    background-color: #6421ff;
+    text-transform: uppercase;
+    box-sizing: 4px;
+    margin-top: 2vw;
+    margin-bottom: 8px;
+    border: 0;
+    cursor: pointer;
+    transition: .5s;
+
+    &:hover{
+        background-color: #8050f1;
+    }
 }
